@@ -1,0 +1,11 @@
+docker build:
+docker build -t postgresql .
+
+docker run:
+docker run --name test_postgresql_db -p 5432:5432 postgresql
+
+delete all images:
+docker rmi -f $(docker images -aq)
+
+delete all containers:
+docker rm -f $(docker ps -aq)
